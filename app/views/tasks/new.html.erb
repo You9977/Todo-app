@@ -1,0 +1,25 @@
+<h2>ToDoを作成する</h2>
+<%= form_with model: @task do |f| %>
+ <%= render 'shared/error_messages' %>
+
+  <div class="label">
+    <%= f.label :ToDo名 %>
+  </div>
+  <div class="field">
+    <%= f.text_field  :title, size: 38, placeholder: "例）○○の予約" %>
+  </div>
+  <div class="label">
+    <%= f.label :詳細 %>
+  </div>
+  <div class="field">
+    <%= f.text_area :content, cols: 40, rows: 10 %>
+  </div>
+  <div class="label">
+    <%= f.label :締切り %>
+  </div>
+  <div class="field">
+    <%= f.date_field  :deadline %>
+  </div>
+  <%= f.submit value="追加", class: "btn btn-warning " %>
+<% end %>
+<%= link_to '戻る', tasks_path %>
