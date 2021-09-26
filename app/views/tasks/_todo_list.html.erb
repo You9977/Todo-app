@@ -1,26 +1,26 @@
-<table class="table table-hover table-striped">
-  <h2>ToDoリスト</h2>
-  <thead id="table">
-    <tr>
-      <th></th>
-      <th>Todo名</th>
-      <th>締切日</th>
-      <th>作成日</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @tasks.each do |task| %>
-    <tr>
-      <td><%= check_box "checkbox", task %></td>
-      <td><%= link_to "#{task.title}", task_path(task) %></td>
-      <td><%= l task.deadline,   format: :veryshort  if task.deadline.present? %></td>
-      <td><%= l task.created_at, format: :veryshort %></td>
-      <td><%= link_to '編集', edit_task_path(task) %></td>
-      <td><%= link_to '削除', task_path(task),method: :delete,
-              data: {confirm: '削除しますか？'} %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="col-md-9">
+  <table class="table table-hover table-striped">
+    <h2>ToDoリスト</h2>
+    <thead id="table">
+      <tr>
+        <th>Todo名</th>
+        <th>締切日</th>
+        <th>作成日</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @tasks.each do |task| %>
+      <tr>
+        <td><%= link_to "#{task.title}", task_path(task) %></td>
+        <td><%= l task.deadline,   format: :veryshort  if task.deadline.present? %></td>
+        <td><%= l task.created_at, format: :veryshort %></td>
+        <td><%= link_to '編集', edit_task_path(task) %></td>
+        <td><%= link_to '削除', task_path(task),method: :delete,
+                    data: {confirm: '削除しますか？'} %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

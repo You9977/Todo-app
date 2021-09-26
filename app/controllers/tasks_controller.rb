@@ -36,11 +36,6 @@ class TasksController < ApplicationController
     redirect_to root_path    
   end
 
-  def destroy_cehcked
-    @tasks = Task.where(id: params[:id])
-    @tasks.each(:destroy)
-  end
-
   def show
     @task = Task.find(params[:id])    
   end

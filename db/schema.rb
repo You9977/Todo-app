@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_25_044935) do
+ActiveRecord::Schema.define(version: 2021_09_26_082837) do
 
   create_table "tasks", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2021_09_25_044935) do
     t.text "content"
     t.datetime "deadline"
     t.string "title"
+    t.boolean "checkbox"
   end
 
 end

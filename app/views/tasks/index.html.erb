@@ -7,11 +7,6 @@
       </div>
       <p>#カテゴリーを表示する</p>
     </section>
-  </aside>
-  <div class="col-md-9">
-    <%= form_tag(root_path) do %>
-      <%= render 'todo_list' %>
-      <input type="submit" value="削除", method: :delete>
-    <% end %>
-  </div>
+  </aside>  
+    <%= render 'todo_list' %>      
 </div>
