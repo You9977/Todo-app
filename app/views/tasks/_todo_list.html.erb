@@ -4,6 +4,7 @@
     <thead id="table">
       <tr>
         <th>Todo名</th>
+        <th>カテゴリー</th>
         <th>締切日</th>
         <th>作成日</th>
         <th></th>
@@ -14,6 +15,7 @@
       <% @tasks.each do |task| %>
       <tr>
         <td><%= link_to "#{task.title}", task_path(task) %></td>
+        <td><%= task.category %></td>
         <td><%= l task.deadline,   format: :veryshort  if task.deadline.present? %></td>
         <td><%= l task.created_at, format: :veryshort %></td>
         <td><%= link_to '編集', edit_task_path(task) %></td>
