@@ -27,6 +27,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'uglifier'
 gem 'jquery-rails'
 gem 'bootstrap'
+gem 'rexml'
+gem 'rails-controller-testing'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
@@ -45,7 +47,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'sqlite3'
-  gem 'i18n_generators'
+  gem 'i18n_generators'  
 end
 
 group :test do

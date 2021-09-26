@@ -11,7 +11,12 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.create(task_params)
-    redirect_to tasks_path
+    if @task.save
+      flash[:success] = "ToDoを追加しました！"
+      redirect_to tasks_path
+    else
+      render 'tasks/new'
+    end    
   end
 
   def edit
@@ -31,9 +36,13 @@ class TasksController < ApplicationController
     redirect_to root_path    
   end
 
+  def destroy_cehcked
+    @tasks = Task.where(id: params[:id])
+    @tasks.each(:destroy)
+  end
+
   def show
-    @task = Task.find(params[:id])
-    
+    @task = Task.find(params[:id])    
   end
 
   private

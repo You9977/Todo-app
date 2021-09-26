@@ -1,17 +1,17 @@
-<div class="add-btn">
-  <%= link_to 'ToDoを追加', new_task_path,
-      class: "btn btn-warning " %>
-</div>
-
 <div class="row">
   <aside class="col-md-3">
     <section class="user_info">
+      <div class="btn-add">
+        <%= link_to 'ToDoを追加', new_task_path,
+                  class: "btn btn-warning btn-add" %>
+      </div>
       <p>#カテゴリーを表示する</p>
     </section>
   </aside>
   <div class="col-md-9">
-    <table class="table table-hover table-striped">
-      <%= render 'todo_list' %>  
-    </table>
+    <%= form_tag(root_path) do %>
+      <%= render 'todo_list' %>
+      <input type="submit" value="削除", method: :delete>
+    <% end %>
   </div>
 </div>

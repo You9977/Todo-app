@@ -18,8 +18,8 @@
     <%= f.label :締切り %>
   </div>
   <div class="field">
-    <%= f.date_field  :deadline %>
+    <%= f.date_field  :deadline, value: Time.now.strftime("%Y-%m-%d") %>
   </div>
-  <%= f.submit value="追加", class: "btn btn-warning " %>
+  <%= f.submit value="追加", class: "btn btn-create btn-warning " %>
 <% end %>
-<%= link_to '戻る', tasks_path %>
+<%= link_to '戻る', root_path, class: "btn btn-back" %>
